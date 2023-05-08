@@ -1,0 +1,49 @@
+.dataAdd {
+  position: absolute;
+  width: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background-color: var(--dark-blue);
+  border-radius: 11px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.fa-xmark {
+  font-size: 30px;
+  margin-left: 94%;
+  cursor: pointer;
+  color: #ef4444;
+  margin-top: 5px;
+}
+.dataAdd form {
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+.dataAdd form input {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 10px;
+  width: 70%;
+  font-size: 18px;
+}
+.btn-submit {
+  width: 70%;
+  padding: 10px;
+}
+
+.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: visible;
+}

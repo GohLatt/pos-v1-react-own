@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--light-blue);
+  color: var(--white);
+  padding: 16px 32px;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.header-left form input {
+  border: none;
+  width: 300px;
+  height: 30px;
+  border-radius: 9px;
+  font-size: 18px;
+  padding-left: 16px;
+  margin-right: 10px;
+}

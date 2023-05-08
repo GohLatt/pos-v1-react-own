@@ -1,0 +1,108 @@
+.main {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr;
+}
+.left-section {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: #93c5fd;
+  padding-bottom: 100px;
+}
+.item {
+  background-color: var(--light-blue);
+  color: var(--white);
+  margin: 16px 32px;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 9px;
+}
+.item-info {
+  display: flex;
+  gap: 24px;
+  margin-right: 20px;
+  align-items: center;
+}
+.item-info h2 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.right-section {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.card-container {
+  height: 500px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.add-to-card-item {
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background-color: var(--dark-blue);
+  margin: 8px 16px;
+  border-radius: 9px;
+}
+.action-groups {
+  width: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+}
+.action-groups input {
+  width: 50px;
+  height: 40px;
+  border: none;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 9px;
+  margin-right: 20px;
+}
+
+.btn-move-to-card {
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  padding: 7px 14px;
+  color: var(--dark-blue);
+  border-radius: 9px;
+}
+
+.total-container {
+  border-top: 5px solid var(--white);
+  background-color: var(--light-blue);
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 100px;
+}
+.total-container p {
+  color: var(--white);
+  font-size: 25px;
+  font-weight: 700;
+}
+.total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 900px) {
+  .total-container {
+    flex-direction: column;
+    padding-top: 30px;
+  }
+  .total-container .btn {
+    width: 100%;
+    height: 40px;
+  }
+}
