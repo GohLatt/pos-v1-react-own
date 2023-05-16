@@ -7,18 +7,21 @@ function DataAddForm({ show, setShow, products, setProducts }) {
   const [category, setCategory] = useState("");
   const addData = (e) => {
     e.preventDefault();
-    setProducts([
-      ...products,
-      {
-        id: Date.now(),
-        productName,
-        price,
-        category,
-        count: 1,
-        calPrice: price,
-      },
-    ]);
-
+    if (productName && price && category) {
+      setProducts([
+        ...products,
+        {
+          id: Date.now(),
+          productName,
+          price,
+          category,
+          count: 1,
+          calPrice: price,
+        },
+      ]);
+    } else {
+      alert("Enter All fields");
+    }
     setCategory("");
     setPrice("");
     setProductName("");

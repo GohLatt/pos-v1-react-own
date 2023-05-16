@@ -1,9 +1,20 @@
 function Item({ selectProducts, product, setSelectProducts }) {
   const selectProduct = (id) => {
-    if (!selectProducts.map((p) => p.id).includes(id)) {
-      setSelectProducts((pre) => [...pre, product]);
+    const productExit = selectProducts.find((p) => p.id === id);
+    if (productExit) {
+      setSelectProducts(
+        selectProducts.map((p) =>
+          p.id === id
+            ? {
+                ...productExit,
+                count: productExit.count + 1,
+                price: productExit.price + productExit.calPrice,
+              }
+            : p
+        )
+      );
     } else {
-      alert("This products already added");
+      setSelectProducts((pre) => [...pre, product]);
     }
   };
   return (
@@ -22,4 +33,5 @@ function Item({ selectProducts, product, setSelectProducts }) {
     </div>
   );
 }
+
 export default Item;

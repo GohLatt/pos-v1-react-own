@@ -28,17 +28,22 @@ const App = () => {
   // };
 
   const decrease = (id) => {
-    let decreaseItems = selectProducts.map((p, i) => {
-      if (p.id === id) {
-        return {
-          ...p,
-          count: p.count >= 2 ? p.count - 1 : null,
-          price: p.price > p.calPrice ? p.price - p.calPrice : p.calPrice,
-        };
-      }
-      return p;
-    });
-    setSelectProducts(decreaseItems);
+    const productExit = selectProducts.find((p) => p.id === id);
+    if (productExit.count === 1) {
+      setSelectProducts(selectProducts.filter((p) => p.id !== id));
+    } else {
+      setSelectProducts(
+        selectProducts.map((p) =>
+          p.id === id
+            ? {
+                ...productExit,
+                count: productExit.count - 1,
+                price: productExit.price - productExit.calPrice,
+              }
+            : p
+        )
+      );
+    }
   };
 
   const deleteItem = (id) => {
